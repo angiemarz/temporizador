@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <head>
+        
+        <title>Juego de preguntas</title>
+        <link rel="stylesheet" href="misEstilos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body onload="comenzarCuentaRegresiva()">
+        <h1>Responde 5 preguntas</h1>
+        <h2>Antes de que acabe el tiempo</h2>
+        <h5 class="tiempo" id="textcontador"><span id="cuentaRegresiva"></span></h5>
+        <button class="btninicialn" onclick="volverAIntentar()">Reiniciar</button>
+        <button class="btniniciall" onclick="finalizado()">Listo</button>
+        
+        <div class="todo">
+            <div class="uno">
+                <h3>PREGUNTA UNO</h3>
+                <h4>¿Cuántos años tenía Napoleón al morir?</h4>
+                <input type="text" id="textuno" alt="texto uno" >
+                <button type="submit">Subir respuesta</button>
+            </div>
+            <div class="dos">
+                <h3>PREGUNTA DOS</h3>
+                <h4>¿Cuántas aletas tiene un pez payaso?</h4>
+                <input type="text" id="textdos" alt="texto dos">
+                <button type="submit">Subir respuesta</button>
+            </div>
+            <div class="tres">
+                <h3>PREGUNTA TRES</h3>
+                <h4>¿Cuántos pies tiene un ser humano?</h4>
+                <input type="text" id="texttres" alt="texto tres">
+                <button type="submit">Subir respuesta</button>
+            </div>
+            <div class="cuatro">
+                <h3>PREGUNTA CUATRO</h3>
+                <h4>¿Por qué el cielo es azul?</h4>
+                <input type="text" id="texcuatro" alt="texto cuatro">
+                <button type="submit">Subir respuesta</button>
+            </div>
+            <div class="cinco">
+                <h3>PREGUNTA CINCO</h3>
+                <h4>¿Cuántos años tienes?</h4>
+                <input type="text" id="textcinco" alt="texto cinco">
+                <button type="submit">Subir respuesta</button>
+            </div>
+        </div>
+
+        
+
+        <script>
+            
+            let tiempoTerminado;
+            let intervaloDeTiempo;
+
+            function comenzarCuentaRegresiva() {
+                tiempoTerminado = setTimeout(tiempoCumplido, 30000);
+                intervaloDeTiempo = setInterval(ticTac, 1000);
+
+                document.getElementById("cuentaRegresiva").textContent = 30;
+            }
+
+            function ticTac() {
+                let tiempo = document.getElementById("cuentaRegresiva").textContent;
+
+                document.getElementById("cuentaRegresiva").textContent = tiempo - 1;
+            }
+
+            function tiempoCumplido() {
+                clearInterval(intervaloDeTiempo);
+                document.getElementById("cuentaRegresiva").textContent = 0;
+                document.getElementById("audioFinal").play();
+                alert("GAME OVER: Se acabó el tiempo. Intenta nuevamente");
+            }
+
+            function finalizado() {
+                clearTimeout(tiempoTerminado);
+                clearInterval(intervaloDeTiempo);
+
+                let fecha = new Date();
+                let respuesta1 = document.getElementById("textuno").value;
+                let respuesta2 = document.getElementById("textdos").value;
+                let respuesta3 = document.getElementById("texttres").value;
+                let respuesta4 = document.getElementById("textcuatro").value;
+                let respuesta5 = document.getElementById("textcinco").value;
+
+                let mensaje = fecha.toLocaleDateString("es-Es") + "\n" +
+                                "1. " + respuesta1 + "\n" +
+                                "2. " + respuesta2 + "\n" +
+                                "3. " + respuesta3 + "\n" +
+                                "4. " + respuesta4 + "\n" +
+                                "5. " + respuesta5;
+
+                alert(mensaje);
+            }
+
+            function volverAIntentar() {
+                location.reload();
+            }
+            
+
+        </script>
+    </body>
+
+
+</html>

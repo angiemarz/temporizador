@@ -1,0 +1,69 @@
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: antiquewhite;
+}
+
+h1{
+    font-size: 60px;
+    text-align: center;
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 0;
+}
+.btninicialr{
+    font-size:50px;
+    padding:10px;
+    margin-right: 10px;
+    color: black;
+    background-color: darkcyan;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+
+}
+.btninicialn{
+    font-size:50px;
+    padding:10px;
+    margin-right: 10px;
+    color: black;
+    background-color: darkred;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.btniniciall{
+    font-size:50px;
+    padding:10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    color: black;
+    background-color: yellow;
+    display: block;
+    margin: 0 auto;
+}
+
+.btninicialn:hover{
+    color: white;
+}
+.btninicialr:hover{
+    color: white;
+}
+
+.btniniciall:hover{
+    color: white;
+}
+
+.todo{
+    text-align: center;
+}
+
+.tiempo{
+    text-align: center;
+    font-size: 80px;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
