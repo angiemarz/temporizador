@@ -3,5 +3,5 @@
 Elaborado con:
 JS, HTML y CSS.
 
-![Es la previsualización del proyecto](https://github.com/angiemarz/temporizador/blob/main/ssss.png)
+![Es la previsualización del proyecto](https://github.com/angiemarz/temporizador/blob/main/resp.png)
 
